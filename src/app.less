@@ -1,0 +1,67 @@
+page {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  color: #202020;
+}
+
+/* 文字截断 */
+.row-ellipsis() {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+}
+
+/* 多行文字截断 */
+.row-ellipsis(@number) {
+  display: -webkit-box;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-line-clamp: @number;
+  -webkit-box-orient: vertical;
+}
+
+/* 多行文字截断 */
+.row-ellipsis-2() {
+  .row-ellipsis(2);
+}
+
+/* 背景图片撑开 */
+.bg-img-common() {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 按钮样式重置 */
+.btn-reset() {
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+
+  line-height: normal;
+
+  background-color: transparent;
+  border-radius: 0;
+
+  &::after {
+    width: 0;
+    height: 0;
+
+    border: none;
+    border-radius: 0;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+
+  color: transparent;
+}

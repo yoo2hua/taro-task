@@ -3,9 +3,12 @@ import { Provider } from 'react-redux'
 
 import './app.less'
 import store from './store'
+import setup from './utils/setup'
 
 class App extends Component<PropsWithChildren> {
-  componentDidMount() {}
+  componentDidMount() {
+    // setup()
+  }
 
   componentDidShow() {}
 
