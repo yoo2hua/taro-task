@@ -1,12 +1,16 @@
+import { useState } from 'react'
+
 import Taro from '@tarojs/taro'
 
 import IconFont from '@/components/iconfont'
+import Tx from '@/components/tx'
 
-import { Image, NavBar } from '@antmjs/vantui'
+import { Image, NavBar, Transition } from '@antmjs/vantui'
 
 import styles from './index.module.less'
 
 const Mine = () => {
+  const [show, setShow] = useState(false)
   // 获取系统状态栏高度
   const { statusBarHeight = 0 } = Taro.getSystemInfoSync()
   // 获取小程序右上角胶囊的大小
@@ -27,11 +31,11 @@ const Mine = () => {
       <div
         className={styles['header']}
         style={{
-          height: `${navBarHeight}px`,
+          height: `${navBarHeight + 100}px`,
           paddingTop: `${statusBarHeight}px`,
         }}
       ></div>
-      <div className={styles['main']}>
+      <div className={styles['main']} onClick={() => setShow((pre) => !pre)}>
         <div className={styles['avatar__wrapper']}>
           <Image className={styles['avatar']} src="" radius={'50%'} />
           <p className={styles['nickname']}>鱿鱿花</p>
@@ -59,8 +63,9 @@ const Mine = () => {
             <div className={styles['data']}>999</div>
           </div>
         </div>
-        <div className={styles['avatar__wrapper']}></div>
-        <div className={styles['avatar__wrapper']}></div>
+        <div className={styles['data__wrapper']}></div>
+
+        <Tx />
       </div>
     </div>
   )

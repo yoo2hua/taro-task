@@ -47,6 +47,15 @@
   padding-bottom: calc(20px + env(safe-area-inset-bottom));
   .header {
     box-sizing: border-box;
+    position: relative;
+    background-image: linear-gradient(180deg, #2f6ed3 5%, #5095e4 20%, #5095e4 60%, #2f6ed3 95%);
+
+    // background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
   .main {
     .column-direction();
@@ -79,17 +88,67 @@
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         box-sizing: border-box;
         padding: 24px;
-        .type{
+        .type {
           display: flex;
           align-items: center;
-          .name{
+          .name {
             margin-left: 10px;
           }
         }
-        .data{
-
+        .data {
         }
       }
+    }
+    .data__wrapper {
+      .button {
+        margin: 0;
+        height: auto;
+        background: transparent;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* button styling */
+      .button {
+        --border-right: 6px;
+        --text-stroke-color: rgba(255, 255, 255, 0.6);
+        --animation-color: #37ff8b;
+        --fs-size: 2em;
+        letter-spacing: 3px;
+        text-decoration: none;
+        font-size: var(--fs-size);
+        font-family: 'Arial';
+        position: relative;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 1px var(--text-stroke-color);
+      }
+      /* this is the text, when you hover on button */
+      .hover-text {
+        position: absolute;
+        box-sizing: border-box;
+        content: attr(data-text);
+        color: var(--animation-color);
+        width: 0%;
+        inset: 0;
+        border-right: var(--border-right) solid var(--animation-color);
+        overflow: hidden;
+        transition: 0.5s;
+        -webkit-text-stroke: 1px var(--animation-color);
+      }
+      /* hover */
+      .button:hover .hover-text {
+        width: 100%;
+        filter: drop-shadow(0 0 23px var(--animation-color));
+      }
+    }
+    .vanLeaveActiveClass {
+      transform: rotate(-360deg) translate3d(-100%, -100%, 0);
+    }
+    .vanEnterActiveClass,
+    .vanLeaveActiveClass {
+      transition-property: transform;
     }
   }
 }
