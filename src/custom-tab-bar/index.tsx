@@ -2,6 +2,8 @@ import { switchTab } from '@tarojs/taro'
 
 import classNames from 'classnames'
 
+import IconFont from '@/components/iconfont'
+
 import { useAppSelector } from '@/hooks/redux'
 
 import store from '@/store'
@@ -35,19 +37,20 @@ export default function CustomTabbar() {
         onTabClick(e.detail as string)
       }}
       safeAreaInsetBottom={true}
+      activeColor="#fbb1bdff"
+      inactiveColor="#fae0e4ff"
     >
       {tabbarConfig.list.map((item) => {
-        const active = item.pagePath === tabbarConfig.active
+        // const active = item.pagePath === tabbarConfig.active
 
         return (
           <TabbarItem
-            icon={item.icon}
             name={item.pagePath}
-            className={classNames(styles.item, {
-              [styles.itemActive]: active,
-            })}
+            className={classNames(styles['item'], {})}
+            renderIcon={<IconFont color={'#fae0e4ff'} name={item.icon} />}
+            renderIconActive={<IconFont color={'#fbb1bdff'} name={item.icon} />}
           >
-            {item.text}
+            <div>{item.text}</div>
           </TabbarItem>
         )
       })}
