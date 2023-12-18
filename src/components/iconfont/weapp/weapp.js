@@ -1,6 +1,6 @@
 Component({
   properties: {
-    // statistic-gift | statistic-task | rili | shouru | statistic-points | lijie | zhangdan | youxi | youhuiquan | xunzhang | tab-bar-user | tab-bar-store | tab-bar-task | tab-bar-home | qiandai
+    // common-edit | statistic-gift | statistic-task | rili | shouru | statistic-points | lijie | zhangdan | youxi | youhuiquan | xunzhang | tab-bar-user | tab-bar-store | tab-bar-task | tab-bar-home
     name: {
       type: String,
     },

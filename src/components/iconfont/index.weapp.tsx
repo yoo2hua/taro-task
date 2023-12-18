@@ -4,7 +4,7 @@
 import React, { FunctionComponent } from 'react';
 import Taro from '@tarojs/taro';
 
-export type IconNames = 'statistic-gift' | 'statistic-task' | 'rili' | 'shouru' | 'statistic-points' | 'lijie' | 'zhangdan' | 'youxi' | 'youhuiquan' | 'xunzhang' | 'tab-bar-user' | 'tab-bar-store' | 'tab-bar-task' | 'tab-bar-home' | 'qiandai';
+export type IconNames = 'common-edit' | 'statistic-gift' | 'statistic-task' | 'rili' | 'shouru' | 'statistic-points' | 'lijie' | 'zhangdan' | 'youxi' | 'youhuiquan' | 'xunzhang' | 'tab-bar-user' | 'tab-bar-store' | 'tab-bar-task' | 'tab-bar-home';
 
 interface Props {
   name: IconNames;
