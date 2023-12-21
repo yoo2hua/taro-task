@@ -57,21 +57,16 @@ const Home = () => {
   return (
     <Spin spin={show}>
       <div className={styles['home__page']}>
-        {/* <NavBar className={styles['nav-bar']} border={false} /> */}
         <div
           className={styles['header']}
           style={{
-            height: `${navBarHeight + 100}px`,
+            height: `${navBarHeight + 50}px`,
             paddingTop: `${statusBarHeight}px`,
           }}
-        >
-          122222223
-        </div>
+        />
         <div className={styles['main']}>
-          <div className={styles['banner']}></div>
-          <div className={styles['rank']}> </div>
+          <div className={styles['daily__events']}>每日事项</div>
           <CustomButton />
-          <CustomButton2 />
         </div>
       </div>
     </Spin>
