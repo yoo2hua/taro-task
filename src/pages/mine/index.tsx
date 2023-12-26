@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 
-import Taro, { showToast } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
 
 import Avatar from '@/components/avatar'
 import ChangeAvatarDialog, { ChangeAvatarDialogType } from '@/components/changeAvatarDialog'
@@ -11,6 +11,8 @@ import Spin from '@/components/spin'
 import useBoolean from '@/hooks/utils/useBoolean'
 
 import { formatNumber } from '@/utils/index'
+
+import { navi, ROUTE } from '@/routes'
 
 import styles from './index.module.less'
 
@@ -48,15 +50,7 @@ const Mine = () => {
           </div>
 
           <div className={styles['statistic__wrapper']}>
-            <div
-              className={styles['statistic__item']}
-              onClick={() =>
-                showToast({
-                  title: '提交失败',
-                  icon: 'none',
-                })
-              }
-            >
+            <div className={styles['statistic__item']} onClick={() => navi(ROUTE.point)}>
               <div className={styles['type']}>
                 <IconFont name="statistic-points" size={50} />
                 <div className={styles['name']}>积分</div>
