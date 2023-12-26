@@ -15,5 +15,5 @@ export default interface RouterParams extends Record<ROUTE, any> {
   [ROUTE.mine]: {}
   [ROUTE.point]: {}
   [ROUTE.store]: {}
-  [ROUTE.task]: { task_id: any }
+  [ROUTE.task]: { task_id?: any }
 }

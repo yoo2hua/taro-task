@@ -37,20 +37,6 @@ export default function generateRouteType(routeConfigItem: RouteConfigItem[]) {
     export default ROUTE_ALIASES_MAP
   `
 
-  const pathToAliasesMap = Object.entries(aliasesToPathMap).reduce((ret, entry) => {
-    const [key, value] = entry
-    ret[value] = key
-    ret[value.slice(1)] = key
-    return ret
-  }, {})
-
-  const pathToAliasesMapContent = `
-    enum PATH_TO_ALIASES_MAP
-    ${JSON.stringify(pathToAliasesMap).replaceAll(':', '=')}
-
-    export default PATH_TO_ALIASES_MAP
-  `
-
   const aliasesContent = `
      export enum ROUTE
       ${JSON.stringify(aliases).replaceAll(':', '=')}
@@ -68,8 +54,6 @@ export default function generateRouteType(routeConfigItem: RouteConfigItem[]) {
 
   fs.writeFileSync(OPTIONS.files.aliases_to_path, headerStatement + aliasesToPathMapContent)
   formatFile(OPTIONS.files.aliases_to_path)
-  fs.writeFileSync(OPTIONS.files.path_to_aliases, headerStatement + pathToAliasesMapContent)
-  formatFile(OPTIONS.files.path_to_aliases)
   fs.writeFileSync(OPTIONS.files.params, headerStatement + paramsContent)
   formatFile(OPTIONS.files.params)
 }

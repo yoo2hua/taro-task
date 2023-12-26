@@ -1,7 +1,7 @@
 export default defineAppConfig({
   /** PAGE_START */
 
-  // Do NOT CHANGE THE CODE CHUNK MANUALLY!
+  // DO NOT CHANGE THE CODE CHUNK MANUALLY!
   // This code chunk is automatically generated
   // To change this chunk code, please run "pnpm route"
 
@@ -13,7 +13,7 @@ export default defineAppConfig({
     custom: true,
     /** TABBAR_START */
 
-    // Do NOT CHANGE THE CODE CHUNK MANUALLY!
+    // DO NOT CHANGE THE CODE CHUNK MANUALLY!
     // This code chunk is automatically generated
     // To change this chunk code, please run "pnpm route"
 
