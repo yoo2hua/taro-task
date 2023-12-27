@@ -1,9 +1,9 @@
 export default defineAppConfig({
   /** PAGE_START */
 
-  // DO NOT CHANGE THE CODE CHUNK MANUALLY!
+  // ! DO NOT CHANGE THE CODE CHUNK MANUALLY !
   // This code chunk is automatically generated
-  // To change this chunk code, please run "pnpm route"
+  // To change this code chunk, please run "pnpm route"
 
   pages: ['pages/home/index', 'pages/mine/index', 'pages/point/index', 'pages/store/index', 'pages/task/index'],
   subpackages: [],
@@ -13,9 +13,9 @@ export default defineAppConfig({
     custom: true,
     /** TABBAR_START */
 
-    // DO NOT CHANGE THE CODE CHUNK MANUALLY!
+    // ! DO NOT CHANGE THE CODE CHUNK MANUALLY !
     // This code chunk is automatically generated
-    // To change this chunk code, please run "pnpm route"
+    // To change this code chunk, please run "pnpm route"
 
     list: [
       { pagePath: 'pages/home/index', text: '首页' },

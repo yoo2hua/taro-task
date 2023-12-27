@@ -12,7 +12,7 @@ import useBoolean from '@/hooks/utils/useBoolean'
 
 import { formatNumber } from '@/utils/index'
 
-import { navi, ROUTE } from '@/routes'
+import { navi } from '@/routes'
 
 import styles from './index.module.less'
 
@@ -50,7 +50,7 @@ const Mine = () => {
           </div>
 
           <div className={styles['statistic__wrapper']}>
-            <div className={styles['statistic__item']} onClick={() => navi(ROUTE.point)}>
+            <div className={styles['statistic__item']} onClick={() => navi('point')}>
               <div className={styles['type']}>
                 <IconFont name="statistic-points" size={50} />
                 <div className={styles['name']}>积分</div>

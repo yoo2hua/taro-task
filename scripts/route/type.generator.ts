@@ -1,7 +1,7 @@
 import * as fs from 'fs'
 
 import { OPTIONS, RouteConfigItem } from '.'
-import { headerStatement } from './statement'
+import { headerStatement } from './statement.generator'
 import { formatFile } from './utils'
 
 /**
@@ -20,12 +20,12 @@ export default function generateRouteType(routeConfigItem: RouteConfigItem[]) {
       item.aliases.forEach((alias) => {
         aliases[alias] = alias
         aliasesToPathMap[alias] = '/' + item.page
-        params[`[ROUTE.${alias}]`] = parseParams(item)
+        params[`${alias}`] = parseParams(item)
       })
     } else {
       aliases[item.aliases] = item.aliases
       aliasesToPathMap[item.aliases] = '/' + item.page
-      params[`[ROUTE.${item.aliases}]`] = parseParams(item)
+      params[`${item.aliases}`] = parseParams(item)
     }
   })
 
@@ -37,16 +37,10 @@ export default function generateRouteType(routeConfigItem: RouteConfigItem[]) {
     export default ROUTE_ALIASES_MAP
   `
 
-  const aliasesContent = `
-     export enum ROUTE
-      ${JSON.stringify(aliases).replaceAll(':', '=')}
-
-  `
-
   const paramsContent = `
-    ${aliasesContent}
 
-    export default interface RouterParams extends Record<ROUTE, any>
+    /** 跳转路由参数 */
+    export default interface RouterParams
       ${JSON.stringify(params).replaceAll('"', '')}
 
 
@@ -68,5 +62,5 @@ function parseParams(routeConfigItem: RouteConfigItem) {
     params[param] = 'any'
   })
 
-  return params
+  return Object.keys(params).length ? params : 'Record<string, never>'
 }

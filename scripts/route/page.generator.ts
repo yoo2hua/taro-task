@@ -1,5 +1,5 @@
 import { OPTIONS, RouteConfigItem } from '.'
-import { chunkStatement } from './statement'
+import { chunkStatement } from './statement.generator'
 import { formatFile, writeFileByBoundary } from './utils'
 
 /**

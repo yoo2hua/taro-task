@@ -4,11 +4,11 @@ import { queryString } from '@/utils/qs'
 
 import ROUTE_ALIASES_MAP from '@/routes/aliases_to_path.type'
 
-import RouterParams, { ROUTE } from './params.type'
+import RouterParams from './params.type'
 
 export const historyRouter: string[] = []
 
-export async function navi<T extends ROUTE>(route: T, params?: RouterParams[T], shouldRelaunch?: boolean) {
+export async function navi<T extends keyof RouterParams>(route: T, params?: RouterParams[T], shouldRelaunch?: boolean) {
   // 未传入route跳转到首页
   if (!route) {
     relaunchToIndex()
