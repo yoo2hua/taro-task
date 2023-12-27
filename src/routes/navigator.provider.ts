@@ -8,6 +8,12 @@ import RouterParams from './params.type'
 
 export const historyRouter: string[] = []
 
+/**
+ * 跳转到指定页面
+ * @param route - 页面路径
+ * @param params - 参数
+ * @param shouldRelaunch - 是否重新启动
+ */
 export async function navi<T extends keyof RouterParams>(route: T, params?: RouterParams[T], shouldRelaunch?: boolean) {
   // 未传入route跳转到首页
   if (!route) {
