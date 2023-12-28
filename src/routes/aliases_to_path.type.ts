@@ -3,6 +3,7 @@
 // To change this file, please run "pnpm route'
 
 enum ROUTE_ALIASES_MAP {
+  'notFound' = '/pages/404/index',
   'home' = '/pages/home/index',
   'mine' = '/pages/mine/index',
   'point' = '/pages/point/index',

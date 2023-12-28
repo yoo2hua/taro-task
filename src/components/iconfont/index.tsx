@@ -3,7 +3,7 @@
 
 import React, { FunctionComponent } from 'react';
 
-export type IconNames = 'common-edit' | 'statistic-gift' | 'statistic-task' | 'rili' | 'shouru' | 'statistic-points' | 'lijie' | 'zhangdan' | 'youxi' | 'youhuiquan' | 'xunzhang' | 'tab-bar-user' | 'tab-bar-store' | 'tab-bar-task' | 'tab-bar-home';
+export type IconNames = 'line-edit' | 'line-back' | 'cry-face' | 'statistic-gift' | 'statistic-task' | 'rili' | 'shouru' | 'statistic-points' | 'lijie' | 'zhangdan' | 'youxi' | 'youhuiquan' | 'xunzhang' | 'tab-bar-user' | 'tab-bar-store' | 'tab-bar-task' | 'tab-bar-home';
 
 export interface IconProps {
   name: IconNames;

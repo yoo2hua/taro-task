@@ -5,7 +5,14 @@ export default defineAppConfig({
   // This code chunk is automatically generated
   // To change this code chunk, please run "pnpm route"
 
-  pages: ['pages/home/index', 'pages/mine/index', 'pages/point/index', 'pages/store/index', 'pages/task/index'],
+  pages: [
+    'pages/home/index',
+    'pages/404/index',
+    'pages/mine/index',
+    'pages/point/index',
+    'pages/store/index',
+    'pages/task/index',
+  ],
   subpackages: [],
 
   /** PAGE_END */

@@ -42,7 +42,7 @@ const Mine = () => {
           <div className={styles['avatar__wrapper']}>
             <Avatar wrapperClass={styles['avatar']} />
             <div className={styles['edit']} onClick={() => changeAvatarDialogRef.current?.open()}>
-              <IconFont name="common-edit" />
+              <IconFont name="line-edit" />
             </div>
           </div>
           <div className={styles['nickname__wrapper']}>
