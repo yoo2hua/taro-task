@@ -33,7 +33,7 @@ const pageGeneratorConfig: PlopGeneratorConfig = {
       },
       {
         type: 'add',
-        path: `${path}{{camelCase DIR_NAME}}/{{camelCase FILE_NAME}}.less`, // 添加的文件的路径
+        path: `${path}{{camelCase DIR_NAME}}/{{camelCase FILE_NAME}}.module.less`, // 添加的文件的路径
         templateFile: './page/less.hbs', // 模板文件的路径
       },
       {

@@ -1,0 +1,30 @@
+{{#if FILE_DESC}}
+/**
+ * {{FILE_DESC}}
+ */
+{{/if}}
+import { forwardRef, useImperativeHandle } from 'react'
+
+import styles from './index.module.less'
+
+type {{pascalCase DIR_NAME}}Props = {}
+
+type {{pascalCase DIR_NAME}}Type = {}
+
+const {{pascalCase DIR_NAME}} = forwardRef<{{pascalCase DIR_NAME}}Type, {{pascalCase DIR_NAME}}Props>(function Component(props, ref) {
+  const {} = props
+
+  useImperativeHandle(
+    ref,
+    () => ({}),
+    [],
+  )
+
+  return (
+    <div className={styles['{{dashCase DIR_NAME}}__box']}>
+      <div>{{FILE_DESC}}</div>
+    </div>
+  );
+})
+
+export default {{pascalCase DIR_NAME}}
