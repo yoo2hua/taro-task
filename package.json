@@ -29,7 +29,8 @@
 		"dev:jd": "npm run build:jd -- --watch",
 		"dev:quickapp": "npm run build:quickapp -- --watch",
 		"icon": "npx iconfont-taro",
-		"route": "ts-node ./scripts/route/index.ts"
+		"route": "tsx ./scripts/route/index.ts",
+		"plop": "tsx ./scripts/generators/index.ts"
 	},
 	"browserslist": [
 		"last 3 versions",
@@ -69,6 +70,7 @@
 		"@tarojs/cli": "3.6.20",
 		"@tarojs/webpack5-runner": "3.6.20",
 		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
+		"@types/inquirer-autocomplete-prompt": "^3.0.3",
 		"@types/node": "^20.10.5",
 		"@types/react": "^18.0.0",
 		"@types/react-redux": "^7.1.32",
@@ -82,11 +84,14 @@
 		"eslint-plugin-import": "^2.12.0",
 		"eslint-plugin-react": "^7.8.2",
 		"eslint-plugin-react-hooks": "^4.2.0",
+		"inquirer-autocomplete-prompt": "^3.0.1",
 		"mini-program-iconfont-cli": "^0.6.1",
+		"plop": "^4.0.1",
 		"react-refresh": "^0.11.0",
 		"stylelint": "^14.4.0",
 		"taro-iconfont-cli": "^3.3.0",
-		"ts-node": "^10.9.2",
+		"tsconfig-paths": "^4.2.0",
+		"tsx": "^4.7.0",
 		"typescript": "^4.1.0",
 		"webpack": "5.69.0"
 	}

@@ -15,7 +15,7 @@ export function getAllRouteConfigFiles() {
  * 读取route.config.ts中的内容
  */
 export const resolveRouteConfigContent = async (routeConfigPath: string) => {
-  const { default: config } = await import(routeConfigPath)
+  const { default: config } = require(routeConfigPath)
   config.page = resolvePagePath(routeConfigPath)
   return config
 }

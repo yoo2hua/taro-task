@@ -1,0 +1,16 @@
+{{#if FILE_DESC}}
+/**
+ * {{FILE_DESC}}
+ */
+{{/if}}
+import styles from './index.module.less'
+
+const {{pascalCase DIR_NAME}} = () => {
+  return (
+    <div className={styles['{{dashCase DIR_NAME}}__page']}>
+      <div>{{FILE_DESC}}</div>
+    </div>
+  );
+}
+
+export default {{pascalCase DIR_NAME}}
