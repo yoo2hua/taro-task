@@ -1,4 +1,4 @@
-import { FC, memo } from 'react'
+import { forwardRef, memo, useImperativeHandle, useState } from 'react'
 
 import classNames from 'classnames'
 
@@ -16,13 +16,29 @@ import styles from './index.module.less'
 
 const avatarPics = [avatarPic01, avatarPic02, avatarPic03, avatarPic04, avatarPic05, avatarPic06, avatarPic07]
 
-type AvatarProps = { wrapperClass?: string; avatar?: number } & Partial<ImageProps>
+export type AvatarProps = { wrapperClass?: string; avatar?: number | string } & Partial<ImageProps>
 
-const Avatar: FC<AvatarProps> = (props: AvatarProps) => {
-  const { wrapperClass = '', avatar = 0, round = true, ...rest } = props
+export type AvatarType = {
+  avatar: number | string
+  setAvatar: React.Dispatch<React.SetStateAction<number>>
+}
+
+const Avatar = forwardRef<AvatarType, AvatarProps>(function Component(props, ref) {
+  const { wrapperClass = '', avatar: _avatar = 0, round = true, ...rest } = props
+
+  const [avatar, setAvatar] = useState<number | string>(_avatar)
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      avatar,
+      setAvatar,
+    }),
+    [avatar, setAvatar],
+  )
 
   return (
     <Image {...rest} round className={classNames(styles['copy-btn'], `${wrapperClass}`)} src={avatarPics[avatar]} />
   )
-}
+})
 export default memo(Avatar)

@@ -30,3 +30,14 @@ export function formatNumber(num: number, decimalPlaces: number = 0): string {
   const formatted = num.toFixed(decimalPlaces)
   return formatted.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
+
+/**
+ * 将payload中的属性映射到state中
+ * @param payload - 原始数据对象
+ * @param state - 状态对象
+ */
+export function mapPayloadToState<T extends object>(payload: T, state: T): void {
+  Object.keys(payload).forEach((key) => {
+    state[key] = payload[key]
+  })
+}

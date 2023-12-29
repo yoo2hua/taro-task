@@ -8,6 +8,7 @@ export default interface RouterParams {
   home: Record<string, never>
   mine: Record<string, never>
   myTask: Record<string, never>
+  personalProfileEdit: Record<string, never>
   point: Record<string, never>
   store: Record<string, never>
   task: { task_id?: any }

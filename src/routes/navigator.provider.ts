@@ -1,4 +1,4 @@
-import { navigateTo, reLaunch, switchTab } from '@tarojs/taro'
+import { navigateBack, navigateTo, reLaunch, switchTab } from '@tarojs/taro'
 
 import { queryString } from '@/utils/qs'
 
@@ -54,5 +54,14 @@ export async function navi<T extends keyof RouterParams>(route: T, params?: Rout
 export function relaunchToIndex() {
   reLaunch({
     url: ROUTE_ALIASES_MAP.home,
+  })
+}
+
+/**
+ * 返回上一级路由
+ */
+export function naviBack() {
+  navigateBack({
+    fail: relaunchToIndex,
   })
 }

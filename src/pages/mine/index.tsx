@@ -19,7 +19,6 @@ import styles from './index.module.less'
 const Mine = () => {
   const [loading, { set: setLoading }] = useBoolean(false)
 
-  const changeAvatarDialogRef = useRef<ChangeAvatarDialogType>(null)
   const saluteRef = useRef<SaluteType>(null)
 
   // 获取系统状态栏高度
@@ -41,7 +40,7 @@ const Mine = () => {
         <div className={styles['main']}>
           <div className={styles['avatar__wrapper']}>
             <Avatar wrapperClass={styles['avatar']} />
-            <div className={styles['edit']} onClick={() => changeAvatarDialogRef.current?.open()}>
+            <div className={styles['edit']} onClick={() => navi('personalProfileEdit')}>
               <IconFont name="line-edit" />
             </div>
           </div>
@@ -84,7 +83,6 @@ const Mine = () => {
 
           <Salute ref={saluteRef} />
         </div>
-        <ChangeAvatarDialog ref={changeAvatarDialogRef} setLoading={setLoading} />
       </div>
     </Spin>
   )

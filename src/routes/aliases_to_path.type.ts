@@ -7,6 +7,7 @@ enum ROUTE_ALIASES_MAP {
   'home' = '/pages/home/index',
   'mine' = '/pages/mine/index',
   'myTask' = '/pages/myTask/index',
+  'personalProfileEdit' = '/pages/personalProfileEdit/index',
   'point' = '/pages/point/index',
   'store' = '/pages/store/index',
   'task' = '/pages/task/index',

@@ -7,7 +7,7 @@ export interface LoginWithCodeResponse {
   /** 授权凭据 */
   authorization?: string
   /** 头像 */
-  avatar_url?: string
+  avatar?: string
   /** 昵称 */
   nick_name?: string
 }

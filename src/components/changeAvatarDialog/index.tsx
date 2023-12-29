@@ -1,49 +1,49 @@
-import { forwardRef, memo, useImperativeHandle, useState } from 'react'
+import { forwardRef, useImperativeHandle, useState } from 'react'
 
 import { View } from '@tarojs/components'
 
 import classNames from 'classnames'
+import { isNil } from 'lodash-es'
 
 import useBoolean from '@/hooks/utils/useBoolean'
 
 import { splitArrayIntoChunks } from '@/utils/index'
 
-import { Button, Popup, Toast } from '@antmjs/vantui'
+import { Button, Popup } from '@antmjs/vantui'
 
 import styles from './index.module.less'
 
 import Avatar from '../avatar'
 
 export interface ChangeAvatarDialogType {
-  open: () => void
+  open: (avatar?: number) => void
   close: () => void
 }
 export interface ChangeAvatarDialogProps {
-  setLoading: (loading: boolean) => void
-  successCallback?: () => void
+  avatar?: number
+  setLoading?: (loading: boolean) => void
+  successCallback?: (avatar: number) => void
 }
 
 const avatars = Array.from({ length: 7 }, (v, k) => k)
 
 const ChangeAvatarDialog = forwardRef<ChangeAvatarDialogType, ChangeAvatarDialogProps>(function Dialog(
-  { setLoading, successCallback },
+  { avatar = 0, successCallback },
   ref: React.ForwardedRef<ChangeAvatarDialogType>,
 ) {
   const [visible, { setTrue: setShow, setFalse: close }] = useBoolean(false)
-  const [avatarVal, setAvatarVal] = useState(0)
+  const [avatarVal, setAvatarVal] = useState<number>(avatar)
 
-  const open = () => {
+  const open = (avatar: number) => {
     setShow()
+    if (!isNil(avatar)) {
+      setAvatarVal(avatar)
+    }
   }
 
-  // 保存函数
   const save = () => {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      successCallback?.()
-      close()
-    }, 1000)
+    successCallback?.(avatarVal)
+    close()
   }
 
   useImperativeHandle(ref, () => ({

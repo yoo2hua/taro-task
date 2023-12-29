@@ -71,6 +71,9 @@ dependencies:
   enummapping:
     specifier: ^2.0.0
     version: registry.npmmirror.com/enummapping@2.0.0
+  lodash-es:
+    specifier: ^4.17.21
+    version: registry.npmmirror.com/lodash-es@4.17.21
   react:
     specifier: ^18.0.0
     version: registry.npmmirror.com/react@18.2.0
@@ -100,6 +103,9 @@ devDependencies:
   '@types/inquirer-autocomplete-prompt':
     specifier: ^3.0.3
     version: registry.npmmirror.com/@types/inquirer-autocomplete-prompt@3.0.3
+  '@types/lodash-es':
+    specifier: ^4.17.12
+    version: registry.npmmirror.com/@types/lodash-es@4.17.12
   '@types/node':
     specifier: ^20.10.5
     version: registry.npmmirror.com/@types/node@20.10.5
@@ -4584,6 +4590,14 @@ packages:
     dependencies:
       '@types/fined': registry.npmmirror.com/@types/fined@1.1.5
       '@types/node': registry.npmmirror.com/@types/node@20.10.5
+    dev: true
+
+  registry.npmmirror.com/@types/lodash-es@4.17.12:
+    resolution: {integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash-es/-/lodash-es-4.17.12.tgz}
+    name: '@types/lodash-es'
+    version: 4.17.12
+    dependencies:
+      '@types/lodash': registry.npmmirror.com/@types/lodash@4.14.202
     dev: true
 
   registry.npmmirror.com/@types/lodash.debounce@4.0.9:

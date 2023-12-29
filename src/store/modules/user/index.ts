@@ -1,23 +1,25 @@
 import { login, setStorageSync } from '@tarojs/taro'
 
-import  { setLoginSuccess } from '@/service/request'
+import { setLoginSuccess } from '@/service/request'
 
-import {  LoginWithCode, LoginWithCodeRequest } from '@/api'
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { mapPayloadToState } from '@/utils/index'
+
+import { LoginWithCode, LoginWithCodeRequest } from '@/api'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface UserState {
   /** 授权凭据 */
-  authorization?: string
+  authorization: string
   /** 昵称 */
-  nick_name?: string
+  nick_name: string
   /** 头像url */
-  avatar_url?: string
+  avatar: string
 }
 
 const initialState: UserState = {
   authorization: '',
-  nick_name: '',
-  avatar_url: '',
+  nick_name: '初始名称',
+  avatar: '1',
 }
 
 export const userThunks = {
@@ -41,7 +43,11 @@ export const userThunks = {
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setUserInfo: (state, { payload }: PayloadAction<Partial<UserState>>) => {
+      mapPayloadToState(payload, state)
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(userThunks.login.fulfilled, (state, { payload }) => {
       if (!payload) return
