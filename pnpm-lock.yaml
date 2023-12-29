@@ -68,6 +68,9 @@ dependencies:
   dayjs:
     specifier: ^1.11.10
     version: registry.npmmirror.com/dayjs@1.11.10
+  enummapping:
+    specifier: ^2.0.0
+    version: registry.npmmirror.com/enummapping@2.0.0
   react:
     specifier: ^18.0.0
     version: registry.npmmirror.com/react@18.2.0
@@ -8258,6 +8261,12 @@ packages:
     version: 4.5.0
     engines: {node: '>=0.12'}
     dev: true
+
+  registry.npmmirror.com/enummapping@2.0.0:
+    resolution: {integrity: sha512-i3cfBhUTwbbFfycK6WRqP6bjoXw41477scCfk9I9D44NrrZCDQ7X8nP0l0GSSfg5JwrUCpzMtSQ0HccgCb4UHg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/enummapping/-/enummapping-2.0.0.tgz}
+    name: enummapping
+    version: 2.0.0
+    dev: false
 
   registry.npmmirror.com/envinfo@7.11.0:
     resolution: {integrity: sha512-G9/6xF1FPbIw0TtalAMaVPpiq2aDEuKLXM314jPVAO9r2fo2a4BLqMNkmRS7O/xPPZ+COAhGIz3ETvHEV3eUcg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/envinfo/-/envinfo-7.11.0.tgz}

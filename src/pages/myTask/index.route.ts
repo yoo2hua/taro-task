@@ -1,6 +1,6 @@
 import { RouteConfig } from '@/types/route.type'
 
 export default {
-  name: '{{FILE_DESC}}',
-  aliases: '{{camelCase DIR_NAME}}',
+  name: '我的任务',
+  aliases: 'myTask',
 } as RouteConfig

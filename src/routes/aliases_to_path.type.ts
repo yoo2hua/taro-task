@@ -6,6 +6,7 @@ enum ROUTE_ALIASES_MAP {
   'notFound' = '/pages/404/index',
   'home' = '/pages/home/index',
   'mine' = '/pages/mine/index',
+  'myTask' = '/pages/myTask/index',
   'point' = '/pages/point/index',
   'store' = '/pages/store/index',
   'task' = '/pages/task/index',

@@ -7,6 +7,7 @@ export default interface RouterParams {
   notFound: Record<string, never>
   home: Record<string, never>
   mine: Record<string, never>
+  myTask: Record<string, never>
   point: Record<string, never>
   store: Record<string, never>
   task: { task_id?: any }

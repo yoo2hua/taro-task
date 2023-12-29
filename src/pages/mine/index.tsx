@@ -73,7 +73,14 @@ const Mine = () => {
             </div>
           </div>
 
-          <div className={styles['task__wrapper']}></div>
+          <div
+            className={styles['task__wrapper']}
+            onClick={() => {
+              navi('myTask')
+            }}
+          >
+            我的任务
+          </div>
 
           <Salute ref={saluteRef} />
         </div>

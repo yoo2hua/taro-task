@@ -11,7 +11,7 @@ const NotFound = () => {
   return (
     <div className={styles['not-found__page']}>
       <div className={styles['icon__wrapper']}>
-        <IconFont name="cry-face" size={380} />
+        <IconFont name="cry-face" size={280} />
       </div>
       <p className={styles['main-text']}>页面被外星人偷走了</p>
       <div
