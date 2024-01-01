@@ -3,7 +3,7 @@
  */
 import { useState } from 'react'
 
-import { Button, Form, Switch } from '@tarojs/components'
+import { Button, Form, Input, Switch } from '@tarojs/components'
 import Taro, { useReady } from '@tarojs/taro'
 
 import Spin from '@/components/spin'
@@ -41,6 +41,7 @@ const Home = () => {
         <div className={styles['main']} id="main">
           <div className={styles['daily-events']}>每日事项</div>
           <Form onSubmit={formSubmit} onReset={formReset}>
+            <Input name="inp" />
             <Switch name="switch" className="form-switch"></Switch>
             <Button type="primary" form-type="submit">
               submit

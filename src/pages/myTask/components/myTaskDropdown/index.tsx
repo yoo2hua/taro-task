@@ -26,7 +26,7 @@ const MyTaskDropdown: FC<MyTaskDropdownProps> = (props) => {
   const { dropdownMenuParams, setDropdownMenuParams, getList } = props
 
   return (
-    <DropdownMenu className={styles['menu']}>
+    <DropdownMenu direction="down" className={styles['menu']}>
       {dropdownItems.map((item) => {
         return (
           <DropdownItem

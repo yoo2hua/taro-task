@@ -11,6 +11,9 @@ import classNames from 'classnames'
 import Avatar, { AvatarType } from '@/components/avatar'
 import ChangeAvatarDialog, { ChangeAvatarDialogType } from '@/components/changeAvatarDialog'
 import IconFont from '@/components/iconfont'
+import ImageRender from '@/components/imageRender'
+import Ribbon from '@/components/ribbon'
+import Signature from '@/components/signature'
 
 import { useAppSelector } from '@/hooks/redux'
 
@@ -35,7 +38,7 @@ const PersonalProfileEdit = () => {
       })
       .exec(async (res) => {
         const val = res[0].value
-        console.log("🌊 ~ file: index.tsx:38 ~ .exec ~ val:", val)
+        console.log('🌊 ~ file: index.tsx:38 ~ .exec ~ val:', val)
       })
   }
 
@@ -60,6 +63,17 @@ const PersonalProfileEdit = () => {
         title="个人资料编辑"
         border={false}
       />
+      {/* <Signature /> */}
+      {/* <div className={styles['image-render__box']}>
+        <ImageRender />
+      </div>
+      <div className={styles['image-render__box']}>
+        <ImageRender />
+      </div> */}
+
+      {/* <div className={styles['image-render__box']}>
+        <Ribbon />
+      </div> */}
       <div className={styles['main']}>
         <div className={styles['card']}>
           <div className={styles['card__content']}>
