@@ -2,7 +2,6 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "commonjs",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "removeComments": false,
     "preserveConstEnums": true,
     "moduleResolution": "node",
@@ -32,7 +31,7 @@
       "@/assets/*": ["src/assets/*"],
       "@/types/*": ["src/types/*"],
       "@/utils/*": ["src/utils/*"],
-      "@*": ["src/*"]
+      "@/*": ["src/*"]
     }
   },
   "include": ["./src", "./types"],

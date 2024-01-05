@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  entryPagePath: 'pages/personalProfileEdit/index',
+  entryPagePath: 'pages/createTask/index',
   /** PAGE_START */
 
   // ! DO NOT CHANGE THE CODE CHUNK MANUALLY !
@@ -9,6 +9,7 @@ export default defineAppConfig({
   pages: [
     'pages/home/index',
     'pages/404/index',
+    'pages/createTask/index',
     'pages/mine/index',
     'pages/myTask/index',
     'pages/personalProfileEdit/index',

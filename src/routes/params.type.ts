@@ -5,6 +5,7 @@
 /** 跳转路由参数 */
 export default interface RouterParams {
   notFound: Record<string, never>
+  createTask: Record<string, never>
   home: Record<string, never>
   mine: Record<string, never>
   myTask: Record<string, never>

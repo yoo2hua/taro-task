@@ -1,0 +1,85 @@
+@import '~@/app.less';
+@linear-color: linear-gradient(106.5deg, rgba(255, 215, 185, 0.91) 23%, rgba(223, 159, 247, 0.8) 93%);
+
+.create-task__page {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+
+  background-image: @linear-color;
+
+  .flex-column-container();
+  .card {
+    .card-bg();
+
+    box-sizing: border-box;
+    width: 720px;
+    min-height: 500px;
+    border-radius: 30px;
+    padding: 30px;
+
+    .flex-column-container();
+
+    .form {
+      margin-bottom: 40px;
+      width: 100%;
+
+      :global {
+        .vant-form-formItem-wrapper {
+          .vant-form-formItem {
+            .vant-form-label {
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              font-size: 36px;
+            }
+            .vant-form-formItem-controll {
+              margin-left: 0;
+              width: 100%;
+              .vant-form-formItem-controll-item {
+                display: flex;
+                justify-content: center;
+                /** 步进器输入框 */
+                .van-stepper {
+                  .minus-class{
+                    border-radius: 50%;
+                  }
+                  .plus-class{
+                    border-radius: 50%;
+                  }
+                  .van-stepper__input {
+                    border-radius: 8px;
+                    width: 120px;
+                  }
+                }
+              }
+              .vant-form-message {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      // .stepper{
+
+      //   width: 100%;
+      // }
+    }
+
+    .submit-button {
+      width: 384px;
+      height: 112px;
+      background-image: @linear-color;
+
+      border-radius: 60px;
+      text-align: center;
+
+      font-size: 36px;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 112px;
+    }
+  }
+}

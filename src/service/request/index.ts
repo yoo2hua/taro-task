@@ -2,8 +2,9 @@ import Taro, { getStorageSync } from '@tarojs/taro'
 
 import config from '@/service/config'
 
-// import $ from '@/utils/$'
+import { showToast } from '@/utils/index'
 
+// import $ from '@/utils/$'
 import { loginApi } from '@/api/user'
 
 import responseHandler from './response.provider'
@@ -44,12 +45,12 @@ const request = async (api: string, options?: RequestOptions, callback?: Callbac
    * 登录时开启一个空的promise => loginPromise，所有的请求都会等待loginPromise resolve。
    * 等到登录成功后，手动resolve这个promise，此时所有请求都会正常执行了。
    */
-  if (loginPromise && api !== loginApi) {
-    // 此时正在执行登录，所有请求被拦截
-    await loginPromise
-    // 登录完成后，重新获取一次token
-    header.authorization = getStorageSync('Authorization')
-  }
+  // if (loginPromise && api !== loginApi) {
+  //   // 此时正在执行登录，所有请求被拦截
+  //   await loginPromise
+  //   // 登录完成后，重新获取一次token
+  //   header.authorization = getStorageSync('Authorization')
+  // }
 
   // 理论上说所有请求逻辑都应该在这行之后处理
 
@@ -62,10 +63,12 @@ const request = async (api: string, options?: RequestOptions, callback?: Callbac
         ...opt.uploadOptions?.formData,
       },
       fail: (err) => {
+        console.log('🌊 ~ file: index.ts:80 ~ request ~ err:', err)
         /** errMsg等于uploadFile:fail abort时为手动触发abort */
         if (err.errMsg === 'uploadFile:fail abort') {
           return
         }
+        showToast(err.errMsg || '网络异常')
       },
       filePath: opt.file,
       url: BASE_URI + api,

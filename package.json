@@ -42,6 +42,7 @@
 		"@tarojs/shared": "3.6.20",
 		"@tarojs/taro": "3.6.20",
 		"@tarojs/taro-h5": "3.6.20",
+		"await-to-js": "^3.0.0",
 		"classnames": "^2.3.2",
 		"dayjs": "^1.11.10",
 		"enummapping": "^2.0.0",

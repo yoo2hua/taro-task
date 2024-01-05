@@ -7,7 +7,7 @@ export interface TaskCreateRequest {
   /** 任务积分 */
   task_points: number
   /** 有效天数 */
-  task_valid_days: number
+  task_valid_days?: number
 }
 
 /** 新增任务响应 */

@@ -12,7 +12,9 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: ['@tarojs/plugin-html'],
-  defineConstants: {},
+  defineConstants: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+  },
   alias: {
     '@/api': path.resolve(__dirname, '..', 'src/api'),
     '@/assets': path.resolve(__dirname, '..', 'src/assets'),
@@ -92,6 +94,9 @@ const config = {
     },
   },
 }
+
+console.log('=====环境信息=====')
+console.log('NODE_ENV   : ', process.env.NODE_ENV)
 
 module.exports = function (merge) {
   if (process.env.NODE_ENV === 'development') {

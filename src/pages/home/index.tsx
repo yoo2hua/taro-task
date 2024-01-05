@@ -6,7 +6,11 @@ import { useState } from 'react'
 import { Button, Form, Input, Switch } from '@tarojs/components'
 import Taro, { useReady } from '@tarojs/taro'
 
+import classNames from 'classnames'
+
 import Spin from '@/components/spin'
+
+import { getPeriodOfDay } from '@/utils/time'
 
 import styles from './index.module.less'
 
@@ -21,32 +25,19 @@ const Home = () => {
   const [show] = useState(false)
   useReady(() => {})
 
-  const formSubmit = (e) => {
-    console.log(e)
-  }
-
-  const formReset = (e) => {
-    console.log(e)
-  }
   return (
     <Spin spin={show}>
       <div className={styles['home__page']}>
         <div
           className={styles['header']}
           style={{
-            height: `${navBarHeight + 50}px`,
+            height: `${navBarHeight}px`,
             paddingTop: `${statusBarHeight}px`,
           }}
         />
         <div className={styles['main']} id="main">
-          <div className={styles['daily-events']}>每日事项</div>
-          <Form onSubmit={formSubmit} onReset={formReset}>
-            <Input name="inp" />
-            <Switch name="switch" className="form-switch"></Switch>
-            <Button type="primary" form-type="submit">
-              submit
-            </Button>
-          </Form>
+          <div className={classNames(styles['card'])}>{getPeriodOfDay()}好</div>
+          <div className={classNames(styles['card'], styles['daily-events'])}>每日事项</div>
         </div>
       </div>
     </Spin>

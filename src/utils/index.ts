@@ -1,3 +1,10 @@
+import Taro from '@tarojs/taro'
+
+export * from './$'
+export * from './qs'
+export * from './setup'
+export * from './time'
+
 /**
  * 将数组按照指定的块大小分割成多个子数组
  * @param array - 要分割的数组
@@ -39,5 +46,17 @@ export function formatNumber(num: number, decimalPlaces: number = 0): string {
 export function mapPayloadToState<T extends object>(payload: T, state: T): void {
   Object.keys(payload).forEach((key) => {
     state[key] = payload[key]
+  })
+}
+
+/**
+ * 显示Toast提示框
+ * @param {string} title - 提示框内容
+ */
+export function showToast(title: string) {
+  Taro.showToast({
+    title,
+    icon: 'none',
+    duration: 2000,
   })
 }
