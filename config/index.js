@@ -13,7 +13,7 @@ const config = {
   outputRoot: 'dist',
   plugins: ['@tarojs/plugin-html'],
   defineConstants: {
-    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    NODE_ENV: JSON.stringify(process.env.NODE_ENV),
   },
   alias: {
     '@/api': path.resolve(__dirname, '..', 'src/api'),

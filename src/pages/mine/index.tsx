@@ -49,7 +49,7 @@ const Mine = () => {
           </div>
 
           <div className={styles['statistic__wrapper']}>
-            <div className={styles['statistic__item']} onClick={() => navi('point')}>
+            <div className={styles['statistic__item']} onClick={() => navi('personalProfileEdit')}>
               <div className={styles['type']}>
                 <IconFont name="statistic-points" size={50} />
                 <div className={styles['name']}>积分</div>

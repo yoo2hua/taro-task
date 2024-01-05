@@ -3,7 +3,6 @@
  */
 import { useState } from 'react'
 
-import { Button, Form, Input, Switch } from '@tarojs/components'
 import Taro, { useReady } from '@tarojs/taro'
 
 import classNames from 'classnames'

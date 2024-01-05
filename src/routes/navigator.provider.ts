@@ -4,6 +4,7 @@ import { queryString } from '@/utils/qs'
 
 import ROUTE_ALIASES_MAP from '@/routes/aliases_to_path.type'
 
+import { showToast } from '../utils'
 import RouterParams from './params.type'
 
 export const historyRouter: string[] = []
@@ -25,6 +26,7 @@ export async function navi<T extends keyof RouterParams>(route: T, params?: Rout
 
   if (!page) {
     console.error('获取路由配置失败 ', page)
+    showToast(`获取路由配置失败`)
     return
   }
 

@@ -9,8 +9,9 @@
 		"css": "less"
 	},
 	"scripts": {
-		"dev": "npm run dev:weapp",
+		"build": "npm run build:weapp",
 		"build:weapp": "taro build --type weapp",
+		"dev": "npm run dev:weapp",
 		"dev:weapp": "npm run build:weapp -- --watch",
 		"icon": "npx iconfont-taro",
 		"route": "tsx ./scripts/route/index.ts",

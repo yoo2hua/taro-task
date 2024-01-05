@@ -56,43 +56,19 @@ const request = async (api: string, options?: RequestOptions, callback?: Callbac
 
   let requester
 
-  if (opt?.file) {
-    requester = Uploader({
-      ...opt.uploadOptions,
-      formData: {
-        ...opt.uploadOptions?.formData,
-      },
-      fail: (err) => {
-        console.log('🌊 ~ file: index.ts:80 ~ request ~ err:', err)
-        /** errMsg等于uploadFile:fail abort时为手动触发abort */
-        if (err.errMsg === 'uploadFile:fail abort') {
-          return
-        }
-        showToast(err.errMsg || '网络异常')
-      },
-      filePath: opt.file,
-      url: BASE_URI + api,
-      name: opt.name || 'pic',
-      header: {
-        ...header,
-        'Content-Type': 'multipart/form-data',
-      },
-    })
-  } else {
-    const r = Taro.request({
-      url: BASE_URI + opt.url,
-      data: {
-        ...opt.data,
-      },
-      method: opt.method,
-      header,
-      timeout: config.requestTimeout,
-    })
+  const r = Taro.request({
+    url: BASE_URI + opt.url,
+    data: {
+      ...opt.data,
+    },
+    method: opt.method,
+    header,
+    timeout: config.requestTimeout,
+  })
 
-    callback?.onRequesterBuild?.(r)
+  callback?.onRequesterBuild?.(r)
 
-    requester = r
-  }
+  requester = r
 
   const response = await requester
 

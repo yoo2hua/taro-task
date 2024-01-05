@@ -1,7 +1,6 @@
 import { RouteConfig } from '@/types/route.type'
 
 export default {
-  name: '商城',
-  aliases: 'store',
-  isTabbarPage: true,
+  name: '积分记录',
+  aliases: 'pointRecord',
 } as RouteConfig

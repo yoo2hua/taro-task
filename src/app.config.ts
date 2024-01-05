@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  entryPagePath: 'pages/createTask/index',
+  // entryPagePath: 'pages/createTask/index',
   /** PAGE_START */
 
   // ! DO NOT CHANGE THE CODE CHUNK MANUALLY !
@@ -13,8 +13,8 @@ export default defineAppConfig({
     'pages/mine/index',
     'pages/myTask/index',
     'pages/personalProfileEdit/index',
-    'pages/point/index',
-    'pages/store/index',
+    'pages/pointMall/index',
+    'pages/pointRecord/index',
     'pages/task/index',
   ],
   subpackages: [],
@@ -31,7 +31,7 @@ export default defineAppConfig({
     list: [
       { pagePath: 'pages/home/index', text: '首页' },
       { pagePath: 'pages/mine/index', text: '我的' },
-      { pagePath: 'pages/store/index', text: '商城' },
+      { pagePath: 'pages/pointMall/index', text: '商店' },
       { pagePath: 'pages/task/index', text: '任务' },
     ],
 

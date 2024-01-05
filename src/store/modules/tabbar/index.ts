@@ -28,7 +28,7 @@ const initialState: TabbarState = {
       dot: false,
     },
     {
-      pagePath: 'pages/store/index',
+      pagePath: 'pages/pointMall/index',
       icon: 'tab-bar-store',
       text: '商店',
       dot: false,
